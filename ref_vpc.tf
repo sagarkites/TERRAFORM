@@ -9,7 +9,7 @@ module "vpc_ec2" {
 
 # uat
 module "vpc_ec2" {
-    source = "git@github.com:sagarkites/terraform.git//modules?ref=test"
+    source = "git@github.com:sagarkites/terraform.git//modules?ref=uat"
      region     = "..........."
      access_key = "........................"
      secret_key = "............................................."
