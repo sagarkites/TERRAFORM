@@ -1,5 +1,5 @@
 # Authentication
-# Module for simple Infrastucture in Aws
+# Module for simple Infrastucture in Aws 
 provider "aws" {
   region     = var.region
   access_key = var.access_key
@@ -13,7 +13,7 @@ resource "aws_vpc" "main" {
   tags = {
     Name = "Terraform_vpc"
   }
-}
+}  
   resource "aws_subnet" "main" {
   vpc_id     = aws_vpc.main.id
   cidr_block = var.cidr_block_sub
@@ -26,7 +26,7 @@ resource "aws_vpc" "main" {
   vpc_id = aws_vpc.main.id
   }
 
-
+  
 
 resource "aws_network_acl" "main" {
   vpc_id = aws_vpc.main.id
@@ -71,4 +71,16 @@ resource "aws_instance" "ec2_test" {
     instance_type = var.instance_type
     key_name = var.key
 }
- 
+
+resource "aws_security_group" "new" {
+    name = "terraform_sg"
+
+ingress {
+    description = "Security Group"
+    from_port   = 22
+    to_port     = 22
+    protocol    = var.proto
+    # output as input calling resource aws_instance with attribute publicip 
+    cidr_blocks = ["${aws_instance.ec2_test.public_ip}/32"]
+  }
+}
