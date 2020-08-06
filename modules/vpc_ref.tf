@@ -76,10 +76,10 @@ resource "aws_security_group" "new" {
     name = "terraform_sg"
 
 ingress {
-    description = "Security Group"
+    description = "SG"
     from_port   = 22
     to_port     = 22
-    protocol    = var.proto
+    protocol    = "tcp"
     # output as input calling resource aws_instance with attribute publicip 
     cidr_blocks = ["${aws_instance.ec2_test.public_ip}/32"]
   }
