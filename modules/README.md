@@ -4,6 +4,6 @@
 * Git tags - **git tag -a <tag>**
 * Push tags - **git push origin <tag>**
 * Root stucture 
-  **module "name" {
+  module "name" {
     source = "<git@githun.com/author/repo.git//module?ref=tag>"
-  }**
+  }
