@@ -25,10 +25,14 @@ variable "ami" {
 
 }
 
+variable "proto" {
+    default = "tcp"
+}
+
 variable "instance_type" {
     default = "t2.micro"
 }
-# Key should be already Created in the aws Ec2 console
+# Key should be already Created in the aws Ec2 console 
 variable "key" {
     default = "terraform"
-}
+} 
