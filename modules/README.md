@@ -3,8 +3,7 @@
 * Clone - **git clone <gitsshurl>**
 * Git tags - **git tag -a <tag>**
 * Push tags - **git push origin <tag>**
-<dl>
-  <dt> Git tags list</dt>
-  <dd> test</dd>
-  <dd> uat<dd/>
-</dl>
+* Root stucture 
+  **module "name" {
+    source = "<git@githun.com/author/repo.git//module?ref=tag>"
+  }**
