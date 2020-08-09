@@ -4,3 +4,4 @@
 * Git tags - **git tag -a <tag>**
 * Push tags - **git push origin <tag>**
 * Git repo format - **"<git@github.com/author/repo.git//module?ref=tag>"**
+* Tagged Repository can be used under module section
